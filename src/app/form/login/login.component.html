@@ -1,0 +1,29 @@
+<!-- Login form -->
+<form class="form-signin"  (ngSubmit)="onSignin(f)" #f="ngForm">
+  <div class="text-center mb-4">
+    <img class="mb-4" src="../../../assets/images/avatar1.jpg" alt="" width="80" height="70">
+    <h1 class="h3 mb-3 font-weight-normal">LOGIN</h1>
+    <!-- <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a> -->
+  </div>
+
+  <div class="form-label-group">
+      <label for="inputEmail">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address"  [(ngModel)]="email" name="email">
+  </div>
+
+  <div class="form-label-group">
+      <label for="inputPassword">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password"  [(ngModel)]="password" name="password">
+    
+  </div>
+
+  <div class="sign-up-link mb-3">
+   <p>Don't have an account? <a class="link" routerLink="/signup">Sign up here</a></p>
+  </div>
+  <div class="google">
+  <p>OR</p>
+  <button (click)="login()" class="btn btn-primary">Login with Google</button>
+  <button (click)="loginFacebook()" class="btn btn-primary">Login with Facebook</button></div>
+  <button  class="btn btn-primary btn-block" type="submit" [disabled]="!f.valid">Login</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; Torama innovation hub 2019</p>
+</form>

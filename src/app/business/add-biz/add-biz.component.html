@@ -1,0 +1,110 @@
+
+ <div class="row">
+  <div class="col-md-6">
+    <form #f="ngForm" (ngSubmit)="save(f.value)">
+        <!-- Input field for the business name -->
+      <div class="form-group">
+        <label for="name">Business Name</label>
+        <input  #name="ngModel" [(ngModel)]="f.name" name="name" id="name" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+          Business name is required.
+        </div>
+      </div>
+        <!-- Input field for the business location -->
+      <div class="form-group">
+          <label for="address">Business Location</label>
+          <input #address="ngModel" [(ngModel)]="f.address" name="address" id="address" type="text" class="form-control" required>
+          <div class="alert alert-danger" *ngIf="address.touched && address.invalid">
+            Business location is required.
+          </div>
+      </div>
+        <!-- Input field for the business email -->
+      <div class="form-group">
+          <label for="email">Business Email</label>
+          <input #email="ngModel" [(ngModel)]="f.email" name="email" id="email" type="text" class="form-control" required>
+          <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+            Business e-mail is required.
+          </div>
+      </div>
+        <!-- Input field for the business phone_number -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input #phone="ngModel" [(ngModel)]="f.phone" name="phone" id="email" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="phone.touched && phone.invalid">
+          Phone number is required
+        </div>
+      </div>
+        <!-- Input field for the business category-->
+      <div class="form-group">
+          <label for="category">Category</label>
+          <select #category="ngModel" [(ngModel)]="f.category" name="category" id="category"  class="form-control" required>
+            <option value="" selected>Select</option>
+            <option *ngFor="let c of categories$ | async" >
+              <!-- The categories Observables that is unwrapped with the async pipe is coming from the add-biz.component.ts -->
+              {{ c.name }}
+            </option>
+          </select>
+          <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
+            Business category is required.
+          </div>
+      </div>
+        <!-- Input field for the business image upload -->
+      <div class="form-group">
+        <label for="imageUpload">Image Upload</label>
+        <input #imageUpload="ngModel" [(ngModel)]="f.imageUpload" (change)="onFileChange($event)" name="imageUpload" id="imageUpload" type="file" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="imageUpload.touched && imageUpload.invalid">
+          <div *ngIf="imageUpload.errors.required">Please Upload an Image</div>
+        </div>
+      </div>
+        <!-- Input field for the business website -->
+      <div class="form-group">
+        <label for="website">Business Website</label>
+        <input #website="ngModel" [(ngModel)]="f.website" name="website" id="website" placeholder="e.g: www.baybiz.com" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="website.touched && website.invalid">
+          Business Website is required.
+        </div>
+      </div>
+      <button class="btn btn-primary">Save</button>
+    </form> 
+</div>
+<!-- Card Preview -->
+<div class="col-md-6">
+    <div class="card" style="width: 18rem; margin-top: 100px;">
+      <div class="card-header">
+        <!-- Category Preview -->
+       {{ category.value }}
+      </div>
+      <img class="card-img-top" [src]="imageUpload.value">
+      <div class="card-body">
+        <h5 class="card-title">
+          <!-- Name Preview -->
+          {{ name.value }}
+        </h5>
+        <p class="card-text">
+          <!-- Address Preview -->
+          {{ address.value }}
+        </p>
+        <footer class="blockquote-footer">
+          <cite title="email-address">
+            <!-- Email Preview -->
+            {{ email.value }}
+          </cite>
+        </footer>
+        <footer class="blockquote-footer">
+          <cite title="phone-number">
+              <!-- Phone_number Preview -->
+            {{ phone.value }}
+          </cite>
+        </footer>
+        <footer class="blockquote-footer">
+          <a target="blank" [href]="website.value">
+            <cite title="categories">
+               <!-- Website Preview -->
+              http://{{ website.value }}
+            </cite>
+          </a>
+        </footer>
+      </div>
+</div>
+
+

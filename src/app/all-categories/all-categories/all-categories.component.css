@@ -1,0 +1,8 @@
+.touch{
+    width: 350px;
+    height: 250px;
+}
+.example-header-image {
+    background-image: url('../../../assets/images/avatar1.jpg');
+    background-size: cover;
+  }

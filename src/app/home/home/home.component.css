@@ -1,0 +1,39 @@
+ .display-3{
+    text-align: center;
+    margin-top: -90px;
+
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    background: #1b8000;
+    opacity: 0.8;
+    color: white;
+    
+}
+ .jumbotron{
+    background-image: url('../../../assets/images/newyork.jpg');
+    padding: 12rem 2rem;
+} 
+.container1{
+    color:white;
+}
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../assets/images/avatar1.jpg');
+    background-size: cover;
+  }
+  .touch{
+    width: 350px;
+    height: 250px;
+}
+footer{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    text-decoration: underline;
+}

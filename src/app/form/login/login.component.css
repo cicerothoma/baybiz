@@ -1,0 +1,26 @@
+.form-signin{
+    padding: 80px;
+}
+.mb-4{
+    border-radius: 50%;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+.h3{
+    text-decoration: underline;
+}
+.sign-up-link{
+    text-align: center;
+    padding: 20px;
+}
+.link{
+    text-decoration: underline;
+}
+.google{
+    text-align: center;
+    padding: 30px;
+    padding-top: -5px;
+}

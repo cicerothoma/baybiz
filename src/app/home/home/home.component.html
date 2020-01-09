@@ -1,0 +1,90 @@
+
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <!-- <img [src]="../../src/assets/images/newyork.jpg"  alt="" > -->
+    <div class="container1">
+      <h1 class="display-3">Welcome To Bayelsa Business Directory!</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <ng-template #anonymousUser>
+        <p><a class="btn  btn-lg" routerLink="/signup" role="button">All categories &raquo;</a></p>
+      </ng-template>
+      
+      <p *ngIf='auth.user$ | async as user; else anonymousUser'><a class="btn  btn-lg" routerLink="/allcategories" role="button">All categories &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <h2>POPULAR CATEGORIES</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>EDUCATION</mat-card-title>
+          <mat-card-subtitle>improve your knowledge</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../../../assets/images/education.jpg" alt="Photo of a Shiba Inu" class="touch">
+          <mat-card-content>
+            <p>
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa numquam tenetur? Minus libero suscipit eum obcaecati nulla magni perspiciatis.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/education">view me!</button>
+            <!-- <button mat-button>SHARE</button> -->
+          </mat-card-actions>
+        </mat-card>
+        
+      </div>
+      <div class="col-md-4">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>TECHNOLOGY</mat-card-title>
+            <mat-card-subtitle>"techs at its finest"</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../../../assets/images/technology.jpg" alt="Photo of a Shiba Inu" class="touch">
+          <mat-card-content>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, recusandae optio. Architecto illo neque recusandae libero accusantium ea nulla odit!
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/technology">view me!</button>
+            <!-- <button mat-button>SHARE</button> -->
+          </mat-card-actions>
+        </mat-card>
+        
+      </div>
+      <div class="col-md-4">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>HOTELS</mat-card-title>
+            <mat-card-subtitle>guesthouse & suits</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../../../assets/images/hotels.jpeg" alt="Photo of a Shiba Inu" class="touch">
+          <mat-card-content>
+            <p>
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quos exercitationem a aperiam possimus sapiente recusandae eaque dignissimos at inventore?
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/hotels">view me!</button>
+            <!-- <button mat-button>SHARE</button> -->
+          </mat-card-actions>
+        </mat-card>
+        
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+<footer class="container">
+  <p>&copy; Company 2017-2019</p>
+</footer>
